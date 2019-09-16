@@ -2,10 +2,8 @@
 .idea
 /backup/*
 /dump/*
-/conception/*
-env.yml
-/config/deploy/localtest.rb
 .ddev/docker-compose.yaml
+/var/*
 
 !/app/
 /app/*
@@ -14,7 +12,6 @@ env.yml
 !/app/web/.htaccess
 !/app/web/typo3conf/
 /app/web/typo3conf/*
-# not yet commit LocalConfiguration.php
 !/app/web/typo3conf/LocalConfiguration.php
 !/app/web/typo3conf/AdditionalConfiguration.php
 !/backup/.gitkeep
