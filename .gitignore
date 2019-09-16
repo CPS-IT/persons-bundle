@@ -1,0 +1,22 @@
+.DS_Store
+.idea
+/backup/*
+/dump/*
+/conception/*
+env.yml
+/config/deploy/localtest.rb
+.ddev/docker-compose.yaml
+
+!/app/
+/app/*
+!/app/web/
+/app/web/*
+!/app/web/.htaccess
+!/app/web/typo3conf/
+/app/web/typo3conf/*
+# not yet commit LocalConfiguration.php
+!/app/web/typo3conf/LocalConfiguration.php
+!/app/web/typo3conf/AdditionalConfiguration.php
+!/backup/.gitkeep
+/tmp
+auth.json
