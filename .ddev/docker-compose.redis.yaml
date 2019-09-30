@@ -1,0 +1,30 @@
+# ddev redis recipe file
+#
+# Optional: Install redis-cli tool in your web container which can be used to verify if you can connect to redis
+# ddev ssh
+# sudo apt-get update
+# sudo apt-get install redis-tools -y
+#
+# Use redis-cli -h redis to connet to the redis server
+# More info here https://redis.io/topics/rediscli
+
+
+version: '3.6'
+
+services:
+  redis:
+    container_name: ddev-${DDEV_SITENAME}-redis
+    image: redis:4
+    restart: always
+    ports:
+      - 6379
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTP_EXPOSE=6377
+    volumes: []
+  web:
+    links:
+      - redis:$DDEV_HOSTNAME
